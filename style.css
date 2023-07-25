@@ -1,9 +1,11 @@
 :root {
-    --background-color: rgb(34, 33, 33);
+    --background-color: rgb(42, 32, 66);
+    --cool-blue: rgb(56, 56, 163);
+    --text: rgb(240, 240, 240);
 }
 
 body, html {
-    background-color: var(--main-bg-color);
+    background-color: var(--background-color);
     height: 100%;
     margin: 0;
     font-family: 'Roboto', 'Montserrat', sans-serif;
@@ -19,21 +21,29 @@ body, html {
 
 .header {
     width: 90%;
+    padding-bottom: 6px;
     font-size: 2rem;
     display: flex;
     justify-content: flex-start;
+    color: var(--text);
 }
 
 #dataBox {
     height: 50px;
     width: 90%;
     border: solid grey;
+    border-radius: 4px;
+    background-color: var(--cool-blue);
 }
 
 #descriptionBox {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     height: 20px;
     width: 90%;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    color: var(--text);
    
 }
