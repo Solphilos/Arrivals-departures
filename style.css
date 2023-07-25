@@ -1,0 +1,39 @@
+:root {
+    --background-color: rgb(34, 33, 33);
+}
+
+body, html {
+    background-color: var(--main-bg-color);
+    height: 100%;
+    margin: 0;
+    font-family: 'Roboto', 'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header {
+    width: 90%;
+    font-size: 2rem;
+    display: flex;
+    justify-content: flex-start;
+}
+
+#dataBox {
+    height: 50px;
+    width: 90%;
+    border: solid grey;
+}
+
+#descriptionBox {
+    display: flex;
+    justify-content: space-between;
+    height: 20px;
+    width: 90%;
+   
+}
