@@ -2,6 +2,7 @@
     --background-color: rgb(42, 32, 66);
     --cool-blue: rgb(56, 56, 163);
     --text: rgb(240, 240, 240);
+    --border: rgb(154, 154, 192);
 }
 
 body, html {
@@ -13,37 +14,74 @@ body, html {
     flex-direction: column;
 }
 
-.mainContainer {
+main {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.header {
-    width: 90%;
+header {
     padding-bottom: 6px;
-    font-size: 2rem;
+    font-size: 1rem;
     display: flex;
     justify-content: flex-start;
+    padding-left: 5%;
     color: var(--text);
 }
 
-#dataBox {
+.dataBox {
     height: 50px;
     width: 90%;
-    border: solid grey;
+    display: flex;
+    
+    align-items: center;
+    border: solid var(--border) 2px;
     border-radius: 4px;
     background-color: var(--cool-blue);
+    font-size: 26px;
+    font-weight: bold;
+    color: var(--text);
 }
 
-#descriptionBox {
+.descriptionBox {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 20px;
-    width: 90%;
-    padding-top: 4px;
-    padding-bottom: 4px;
+    width: 89%;
+    padding: 4px;
     color: var(--text);
    
+}
+
+.shipData {
+    
+    
+    padding-left: 4px;
+    padding-right: 4px;
+    
+}
+
+
+
+#origin {
+    position: absolute;
+    right: 67%;
+
+}
+
+#dock {
+    position: absolute;
+    right: 48%;
+}
+
+#arrives {
+    position: absolute;
+    right: 25%;
+}
+
+#status {
+    position: absolute;
+    right: 5%;
+
 }
