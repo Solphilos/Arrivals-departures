@@ -1,40 +1,3 @@
-
-
-// creates divs in which data will be populated
-/*
-const makeDivs = () => {
-    const dataBoxes = document.createElement('div');
-    const descriptionBoxes = document.createElement('div');
-    const mainContainer = document.querySelector('main');
-    dataBoxes.setAttribute('id', 'dataBox');
-    descriptionBoxes.setAttribute('id', 'descriptionBox');
-    mainContainer.appendChild(dataBoxes);
-    mainContainer.appendChild(descriptionBoxes);
-    const shipNameField = document.createElement('div');
-    const originField = document.createElement('div');
-    const dockField = document.createElement('div');
-    const arrivesField = document.createElement('div');
-    const statusField = document.createElement('div');
-    descriptionBoxes.appendChild(shipNameField);
-    descriptionBoxes.appendChild(originField);
-    descriptionBoxes.appendChild(dockField);
-    descriptionBoxes.appendChild(arrivesField);
-    descriptionBoxes.appendChild(statusField);
-    shipNameField.textContent = "SHIP NAME";
-    originField.textContent = "ORIGIN";
-    dockField.textContent = "DOCK";
-    arrivesField.textContent = "ARRIVES";
-    statusField.textContent = "STATUS";
-}
-*/
-
-// loops and runs "makeDivs" 12 times, creating 24 divs total
-/*
-for (let i = 0; i < 12; i++) {
-    makeDivs();
-}
-*/
-
 const shipDataFactory = (ship, origin, dock, arrival, status) => {
     return {ship, origin, dock, arrival, status}
 }
@@ -46,13 +9,23 @@ const popToArray = (newArrival, ship, origin, dock, arrival, status) => {
     console.log(newArrival.dock);
 };
 
-popToArray('shipOne', 'Rocinante', 'Eros', '13B', '13D1HR', 'Delayed');  
+popToArray('shipOne', 'Rocinante', 'Eros', '13B', '13D1HR', 'Delayed'); 
 
+
+const revealInput = () => {
+    const input = document.querySelector('.inputWindow');
+    input.style.display = "flex";
+}
+
+const removeInput = () => {
+    const input = document.querySelector('.inputWindow');
+    input.style.display = "none";
+}
 
 //let newArrival = shipDataFactory('ROCINANTE', 'EROS', '71D', '44D16H', 'ON TIME');
 
 
-// creates divs and populates them with text
+// creates divs and populates them with static text descriptors 
 const popDescriptions = () => {
     const descriptionBoxes = document.getElementsByClassName('descriptionBox');
     for (let i = 0; i < descriptionBoxes.length; i++) {
@@ -75,6 +48,7 @@ const popDescriptions = () => {
         
 }
 
+// creates divs and populates them with variable data; i.e. name of ships, point of origin, ETA, etc. 
 const popShipInfo = (id, ship, originPoint, dockNum, arrival, stat) => {
     const dataBoxes = document.getElementById(id);
     const shipName = document.createElement('div');
@@ -107,7 +81,15 @@ const popShipInfo = (id, ship, originPoint, dockNum, arrival, stat) => {
 
 popDescriptions();
 
-popShipInfo('one', 'ROCINANTE', 'EROS', '71B', '12D13HR', 'ON TIME');
-popShipInfo('two', 'EXCALIBUR', 'CERES', '51A', '1D12HR', 'SCHEDULED');
-popShipInfo('three', 'INTREPID', 'EARTH', '72A', '3D14HR', 'ON TIME');
 
+
+const assignShipData = () => {
+    let ship = document.getElementById('ship').value;
+    let origin = document.getElementById('pointOfOrigin').value;
+    let dock = document.getElementById('dockLocation').value;
+    let arrivalTime = document.getElementById('arrivalTime').value;
+    let status = document.getElementById('statusData').value;
+    popShipInfo("one", ship, origin, dock, arrivalTime, status);
+}
+
+document.querySelector('.submitShipValues').addEventListener('click', assignShipData)

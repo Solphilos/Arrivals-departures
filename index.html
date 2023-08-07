@@ -8,7 +8,7 @@
     <title>Document</title>
 </head>
 <body>
-    <header><h1>ARRIVALS</h1></header>
+    <header><h1 onclick="revealInput()">ARRIVALS</h1></header>
     <main>
         <div class="dataBox" id="one"></div>
         <div class="descriptionBox"></div>
@@ -34,6 +34,28 @@
         <div class="descriptionBox"></div>
         <div class="dataBox" id ="twelve"></div>
         <div class="descriptionBox"></div>
+
+        <div class="inputWindow">
+            
+            <label for="ship">Ship name
+            <input id="ship" name="ship" type="text">
+            </label>
+            <label for="origin">Point of origin
+            <input id="pointOfOrigin" name="origin" type="text">
+            </label>
+            <label for="dock">Dock
+            <input id="dockLocation" name="dock" type="text">
+            </label>
+            <label for="arrival">Arrival time
+            <input id="arrivalTime" name="arrival" type="text">
+            </label>
+            <label for="status">Status
+            <input id="statusData" name="status" type="text">
+            </label>
+            <button class="submitShipValues">Submit</button>
+            <button onclick="removeInput()">x</button>
+
+        </div>
         
     </main>
     <script src="script.js"></script>

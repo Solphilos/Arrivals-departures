@@ -85,3 +85,26 @@ header {
     right: 5%;
 
 }
+
+.inputWindow {
+    height: 400px;
+    width: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -200px;
+    margin-left: -150px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    border: solid var(--border) 2px;
+    border-radius: 10px;
+    background-color: var(--background-color);
+    color: var(--text);
+    padding-right: 6px;
+}
+
+input {
+    background-color: var(--border);
+}
